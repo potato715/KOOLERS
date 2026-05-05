@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My School Project</title>
+</head>
+<body>
+
+  <h1>Welcome</h1>
+
+  <form id="loginForm">
+    <h2>Login</h2>
+
+    <label>Username:</label>
+    <input type="text" id="username" placeholder="Enter username" />
+
+    <br><br>
+
+    <label>Password:</label>
+    <input type="password" id="password" placeholder="Enter password" />
+
+    <br><br>
+
+    <button type="button" onclick="validateForm()">Login</button>
+  </form>
+
+  <p id="message"></p>
+
+  <script>
+    function validateForm() {
+      // INPUT VALIDATION - Place 1
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+
+      if (username.trim() === "") {
+        document.getElementById("message").innerText = "Username cannot be empty!";
+        return;
+      }
+
+      if (password.trim() === "") {
+        document.getElementById("message").innerText = "Password cannot be empty!";
+        return;
+      }
+
+      // BASIC AUTHENTICATION - Place 2
+      if (username === "admin" && password === "school123") {
+        document.getElementById("message").innerText = "Login successful! Welcome, " + username;
+      } else {
+        document.getElementById("message").innerText = "Invalid username or password.";
+      }
+    }
+  </script>
+
+</body>
+</html>
